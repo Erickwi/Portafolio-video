@@ -222,7 +222,10 @@ export const ProjectsPanel = memo(function ProjectsPanel({ projects, accentColor
                                 <video
                                   controls
                                   style={{ width: "100%", borderRadius: 8, boxShadow: "0 6px 24px rgba(0,0,0,0.4)" }}>
-                                  <source src={project.video} type="video/mp4" />
+                                  <source
+                                    src={`${import.meta.env.BASE_URL}${project.video.replace(/^\//, "")}`}
+                                    type="video/mp4"
+                                  />
                                 </video>
                               </div>
                             )}
