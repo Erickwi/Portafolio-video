@@ -6,9 +6,7 @@ interface Props {
 }
 
 export const TechMarquee = memo(function TechMarquee({ icons, height = 56 }: Props) {
-  const defaultIcons = icons ?? [
-    "Edición Vertical", "Sony Vegas", "DaVinci Resolve", "CapCut",
-  ];
+  const defaultIcons = icons ?? ["Sony Vegas", "DaVinci Resolve", "CapCut"];
   const items = [...defaultIcons, ...defaultIcons, ...defaultIcons, ...defaultIcons];
 
   return (
@@ -19,7 +17,16 @@ export const TechMarquee = memo(function TechMarquee({ icons, height = 56 }: Pro
         paddingBottom: 98,
       }}>
       <div style={{ textAlign: "center", marginBottom: 12 }}>
-        <h4 style={{ margin: 0, color: "#ffffff", fontSize: "2.125rem", letterSpacing: "0.12em", textTransform: "uppercase", opacity: 0.95, fontWeight: 600 }}>
+        <h4
+          style={{
+            margin: 0,
+            color: "#ffffff",
+            fontSize: "2.125rem",
+            letterSpacing: "0.12em",
+            textTransform: "uppercase",
+            opacity: 0.95,
+            fontWeight: 600,
+          }}>
           Herramientas
         </h4>
       </div>
@@ -57,13 +64,11 @@ function MarqueeAuto({ speed = 40, children }: { speed?: number; children: React
     const half = el.scrollWidth / 2;
     const duration = half / speed;
 
-    const anim = el.animate(
-      [
-        { transform: "translateX(0)" },
-        { transform: `translateX(-${half}px)` },
-      ],
-      { duration: duration * 1000, iterations: Infinity, easing: "linear" }
-    );
+    const anim = el.animate([{ transform: "translateX(0)" }, { transform: `translateX(-${half}px)` }], {
+      duration: duration * 1000,
+      iterations: Infinity,
+      easing: "linear",
+    });
     animRef.current = anim;
 
     return () => anim.cancel();
@@ -71,9 +76,7 @@ function MarqueeAuto({ speed = 40, children }: { speed?: number; children: React
 
   return (
     <div style={{ overflow: "hidden" }}>
-      <div
-        ref={trackRef}
-        style={{ display: "flex", width: "max-content" }}>
+      <div ref={trackRef} style={{ display: "flex", width: "max-content" }}>
         {children}
       </div>
     </div>

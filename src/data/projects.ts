@@ -11,7 +11,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: "Pilas Oficial",
-    description: "Proyecto personal de creación de contenido diverso. Videos tutoriales y entretenimiento con edición creativa y dinámica.",
+    description: "Proyecto personal de creación de contenido educativo. Videos tutoriales y entretenimiento con edición creativa y dinámica.",
     year: "2020",
     tiktokProfile: "https://www.tiktok.com/@pilasoficial",
     tiktokVideos: [
@@ -31,7 +31,7 @@ export const projects: Project[] = [
   },
   {
     title: "Minitas League",
-    description: "Edición de videos para competición de fútbol. Contenido dinámico con narración, repeticiones y gráficos en pantalla.",
+    description: "Edición de videos para competición de fútbol. Contenido dinámico con narración y manejo de motion graphics.",
     year: "May 2022",
     tiktokProfile: "https://www.tiktok.com/@erick_.ramirez",
     tiktokVideos: [
