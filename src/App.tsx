@@ -17,7 +17,7 @@ function App() {
         <Portfolio
           name="Erick Ramírez"
           role="Editor de Video"
-          bio="Me gusta la edición de video. Empecé como un hobby y con el tiempo, cada vez que surgían proyectos personales o profesionales, fui perfeccionando y probando diferentes herramientas. Actualmente trabajo con DaVinci Resolve para edición más profesional y CapCut para contenido de redes sociales, principalmente TikTok."
+          bio="Me gusta la edición de video. Empecé como un hobby hace 7 años y con el tiempo, cada vez que surgían proyectos personales o profesionales, fui perfeccionando y probando diferentes herramientas de edición de video como Capcut, Sony Vegas. Actualmente trabajo con DaVinci Resolve para edición más profesional y CapCut para contenido de redes sociales, principalmente TikTok."
           accentColor="#e74c3c"
           projects={projects}
           contactEmail="electrictiesto@gmail.com"
