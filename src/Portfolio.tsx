@@ -4,13 +4,14 @@ import { HeroPanel } from "./components/portfolio/HeroPanel";
 import { ProjectsPanel } from "./components/portfolio/ProjectsPanel";
 import { TechMarquee } from "./components/portfolio/TechMarquee";
 import ContactPanel from "./components/portfolio/ContactPanel";
+import type { ProjectVideo } from "./data/projects";
 
 interface PortfolioProps {
   name: string;
   role: string;
   bio: string;
   accentColor?: string;
-  projects?: Array<{ title: string; description: string; year?: string | number; tags?: string[]; video?: string; tiktokProfile?: string; tiktokVideos?: string[] }>;
+  projects?: Array<{ title: string; description: string; year?: string | number; tags?: string[]; video?: string; videos?: ProjectVideo[]; tiktokProfile?: string; tiktokVideos?: string[] }>;
   contactEmail?: string;
   navItems?: Array<{ label: string; href?: string }>;
   showScrollHint?: boolean;
@@ -80,17 +81,21 @@ export function Portfolio({
         </div>
       </StickyHeader>
 
-      <HeroPanel name={name} role={role} accentColor={accentColor} showScrollHint={showScrollHint} />
+      <div id="home">
+        <HeroPanel name={name} role={role} accentColor={accentColor} showScrollHint={showScrollHint} />
+      </div>
 
-      <Scene duration="200vh">
-        <div style={sectionCenter}>
-          <div style={{ maxWidth: 750, fontSize: "20px" }}>
-            <TextReveal mode="word" at={0.05} span={0.85} color="#ffffff" dimColor="rgba(255,255,255,0.1)">
-              {bio}
-            </TextReveal>
+      <div id="about" style={{ scrollMarginTop: 48 }}>
+        <Scene duration="200vh">
+          <div style={sectionCenter}>
+            <div style={{ maxWidth: 750, fontSize: "20px" }}>
+              <TextReveal mode="word" at={0.05} span={0.85} color="#ffffff" dimColor="rgba(255,255,255,0.1)">
+                {bio}
+              </TextReveal>
+            </div>
           </div>
-        </div>
-      </Scene>
+        </Scene>
+      </div>
 
       <TechMarquee />
       <ProjectsPanel projects={projects} accentColor={accentColor} />
